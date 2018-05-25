@@ -1,0 +1,83 @@
+\hypertarget{classstereocalibration}{}\section{stereocalibration Class Reference}
+\label{classstereocalibration}\index{stereocalibration@{stereocalibration}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstereocalibration_afe9db633904c17a1fdeb2d447d64ca2f}\label{classstereocalibration_afe9db633904c17a1fdeb2d447d64ca2f}} 
+void {\bfseries start\+Stereo\+Calibration} (std\+::vector$<$ cv\+::\+Mat $>$, std\+::vector$<$ cv\+::\+Mat $>$)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a60083d45a44a993aab6ad34449de7783}\label{classstereocalibration_a60083d45a44a993aab6ad34449de7783}} 
+void {\bfseries stereo\+Calibration\+Simple} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_af4c77e6b722d4dfdb683219d815747c1}\label{classstereocalibration_af4c77e6b722d4dfdb683219d815747c1}} 
+double {\bfseries stereo\+Calibrate} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ cv\+::\+Point2f $>$$>$$>$ \&, std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$, std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&, \mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} \&, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a24f5a6156085c208de9ec89e5fc2cecd}\label{classstereocalibration_a24f5a6156085c208de9ec89e5fc2cecd}} 
+double {\bfseries stereo\+Calibration\+Quality\+Check} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ cv\+::\+Point2f $>$$>$$>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&, \mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} \&, int)
+\item 
+\mbox{\Hypertarget{classstereocalibration_aa6c93add66c90bc625b8452c21b07a85}\label{classstereocalibration_aa6c93add66c90bc625b8452c21b07a85}} 
+std\+::string {\bfseries save\+S\+C\+Intrinsic\+Params} (std\+::vector$<$ cv\+::\+Mat $>$, std\+::vector$<$ cv\+::\+Mat $>$)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a2461dae2c1a9a8d29d970b9a46fc664f}\label{classstereocalibration_a2461dae2c1a9a8d29d970b9a46fc664f}} 
+void {\bfseries save\+S\+C\+Extrinsic\+Params} (\mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}}, \mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}})
+\item 
+\mbox{\Hypertarget{classstereocalibration_a60a99b7e05111260ae38830938823bbe}\label{classstereocalibration_a60a99b7e05111260ae38830938823bbe}} 
+void {\bfseries rectify} (std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Rect $>$ \&, \mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} \&, \mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}} \&, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a14da1664d33f337e7287abe40e4ed0bb}\label{classstereocalibration_a14da1664d33f337e7287abe40e4ed0bb}} 
+void {\bfseries rectify\+Uncalibrated} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ cv\+::\+Point2f $>$$>$$>$ \&, std\+::vector$<$ cv\+::\+Mat $>$, \mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}}, \mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}}, cv\+::\+Size, int)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a2840c5f35f39bfa3d0922f33c9978283}\label{classstereocalibration_a2840c5f35f39bfa3d0922f33c9978283}} 
+void {\bfseries stereo\+Arrangement} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_ad0d8c09ef147e305a71660deaf0a8e44}\label{classstereocalibration_ad0d8c09ef147e305a71660deaf0a8e44}} 
+void {\bfseries init\+Stereo\+Undistort\+Rectify\+Map} (std\+::vector$<$ cv\+::\+Mat $>$, std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ std\+::vector$<$ cv\+::\+Mat $>$$>$ \&, \mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}}, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a426d7869078663e81714a90005c547fb}\label{classstereocalibration_a426d7869078663e81714a90005c547fb}} 
+cv\+::\+Mat {\bfseries stereo\+Arrangement} (\mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}}, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a794dd070b629c23d207cf8ba63220a94}\label{classstereocalibration_a794dd070b629c23d207cf8ba63220a94}} 
+void {\bfseries set\+Board\+Size} (int h, int w)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a71a8ba7ff936efa2ffbf355e926386ea}\label{classstereocalibration_a71a8ba7ff936efa2ffbf355e926386ea}} 
+void {\bfseries set\+Square\+Size} (float square\+Size)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a92edd3ef340a72a4fdeb7f9d4e66074d}\label{classstereocalibration_a92edd3ef340a72a4fdeb7f9d4e66074d}} 
+\mbox{\hyperlink{structintrinsic_param}{intrinsic\+Param}} {\bfseries read\+S\+C\+Intrinsic\+Params} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_abd958e45ebb0cf334d4ad251f70ddbf8}\label{classstereocalibration_abd958e45ebb0cf334d4ad251f70ddbf8}} 
+\mbox{\hyperlink{structextrinsic_param}{extrinsic\+Param}} {\bfseries read\+S\+C\+Extrinsic\+Params} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_ac77aecb4887e10bc697e82449371d97f}\label{classstereocalibration_ac77aecb4887e10bc697e82449371d97f}} 
+void {\bfseries set\+Image\+Size} (int h, int w)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a32cd7160b933edbfebc296ac235fc8e4}\label{classstereocalibration_a32cd7160b933edbfebc296ac235fc8e4}} 
+cv\+::\+Size {\bfseries get\+Image\+Size} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_aa2ebcdd8981f302aa92fb36b9ea67d1e}\label{classstereocalibration_aa2ebcdd8981f302aa92fb36b9ea67d1e}} 
+cv\+::\+Size {\bfseries get\+Image\+Size\+Auto} ()
+\item 
+\mbox{\Hypertarget{classstereocalibration_a232a4ec1a773ed67b8ca7f3cf901b38d}\label{classstereocalibration_a232a4ec1a773ed67b8ca7f3cf901b38d}} 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Mat $>$ $>$ {\bfseries init\+Stereo\+U\+R\+Mfrom\+Calib\+Param} (\mbox{\hyperlink{structintrinsic_param}{intrinsic\+Param}}, \mbox{\hyperlink{structextrinsic_param}{extrinsic\+Param}})
+\item 
+\mbox{\Hypertarget{classstereocalibration_a1632a60ca43db38afc1a5c794ce050e8}\label{classstereocalibration_a1632a60ca43db38afc1a5c794ce050e8}} 
+void {\bfseries setvalid\+Roi} (std\+::vector$<$ cv\+::\+Rect $>$ valid\+Roi)
+\item 
+\mbox{\Hypertarget{classstereocalibration_a75e07889930798d7de9df6ac5c57378c}\label{classstereocalibration_a75e07889930798d7de9df6ac5c57378c}} 
+std\+::vector$<$ cv\+::\+Rect $>$ {\bfseries getvalid\+Roi} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstereocalibration_a839900ecab29ae11694a40cc6d1c8a5a}\label{classstereocalibration_a839900ecab29ae11694a40cc6d1c8a5a}} 
+\mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}} {\bfseries g\+S\+R\+Param}
+\item 
+\mbox{\Hypertarget{classstereocalibration_aa6e63956feeb64e1a26310bd4e8f356a}\label{classstereocalibration_aa6e63956feeb64e1a26310bd4e8f356a}} 
+\mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} {\bfseries g\+S\+C\+Param}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+stereocalibration.\+h\item 
+stereocalibration.\+cpp\end{DoxyCompactItemize}

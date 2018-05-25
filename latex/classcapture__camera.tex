@@ -1,0 +1,201 @@
+\hypertarget{classcapture__camera}{}\section{capture\+\_\+camera Class Reference}
+\label{classcapture__camera}\index{capture\+\_\+camera@{capture\+\_\+camera}}
+
+
+The \mbox{\hyperlink{classcapture__camera}{capture\+\_\+camera}} class is for handler class for opencv camera capture.  
+
+
+
+
+{\ttfamily \#include $<$capture\+\_\+camera.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapture__camera_a1bed8b2feef994db895ed1ca8c03b7d6}\label{classcapture__camera_a1bed8b2feef994db895ed1ca8c03b7d6}} 
+void {\bfseries init} (\mbox{\hyperlink{classlogmessagehandler}{logmessagehandler}})
+\item 
+void \mbox{\hyperlink{classcapture__camera_a1a47efefa0b820beacee88b5332dc01f}{start\+\_\+camera}} (int)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a1a47efefa0b820beacee88b5332dc01f}{capture\+\_\+camera\+::start\+\_\+camera}} start camera capture using open\+CV library \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcapture__camera_a73588d980bf53b1372b3f2b36363e726}{start\+\_\+camera\+\_\+v4l2}} (int cam)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a73588d980bf53b1372b3f2b36363e726}{capture\+\_\+camera\+::start\+\_\+camera\+\_\+v4l2}} start camera capture using v4l2 library -\/ applicable to linux only \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapture__camera_a7ecd4399b7d25b3f32dc58e437370a2d}\label{classcapture__camera_a7ecd4399b7d25b3f32dc58e437370a2d}} 
+void \mbox{\hyperlink{classcapture__camera_a7ecd4399b7d25b3f32dc58e437370a2d}{stop\+\_\+camera}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a7ecd4399b7d25b3f32dc58e437370a2d}{capture\+\_\+camera\+::stop\+\_\+camera}} Terminate camera capture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapture__camera_a287af5e4774458096d7cfc7c5c838cc9}\label{classcapture__camera_a287af5e4774458096d7cfc7c5c838cc9}} 
+void {\bfseries capture} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_afd406ecac1bcde016a91bf98623f3829}\label{classcapture__camera_afd406ecac1bcde016a91bf98623f3829}} 
+void {\bfseries capturev4l2} ()
+\item 
+bool \mbox{\hyperlink{classcapture__camera_acba0e792dbd2136b7a6273e1fe0f05a4}{successful}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_acba0e792dbd2136b7a6273e1fe0f05a4}{capture\+\_\+camera\+::successful}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcapture__camera_a07d88d50c866430da2dd5cf4362c2a67}{update\+\_\+frame}} (Mat)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a07d88d50c866430da2dd5cf4362c2a67}{capture\+\_\+camera\+::update\+\_\+frame}} \end{DoxyCompactList}\item 
+Mat \mbox{\hyperlink{classcapture__camera_a65e6760360f14c149612f2280aed23dc}{get\+R\+G\+Bframe}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a65e6760360f14c149612f2280aed23dc}{capture\+\_\+camera\+::get\+R\+G\+Bframe}} Get R\+GB Matrices from camera capture function \end{DoxyCompactList}\item 
+Mat \mbox{\hyperlink{classcapture__camera_ac0efa824fd11a5e77ff11114c5e6d0bc}{getframe}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_ac0efa824fd11a5e77ff11114c5e6d0bc}{capture\+\_\+camera\+::getframe}} Get raw mat from camera capture function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcapture__camera_a4c624aa08561057ba402c8728f7693c5}{flip\+Frame}} (Mat, Mat)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcapture__camera_a4c624aa08561057ba402c8728f7693c5}{capture\+\_\+camera\+::flip\+Frame}} flip an image from camera capture function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcapture__camera_a0c34de9b109ac6c8b6d178d72d180f99}\label{classcapture__camera_a0c34de9b109ac6c8b6d178d72d180f99}} 
+void {\bfseries enable\+Flip} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_a87fe0d7ba5860e8513e0815ff2657330}\label{classcapture__camera_a87fe0d7ba5860e8513e0815ff2657330}} 
+void {\bfseries set\+Size\+Properties} (int, int)
+\item 
+\mbox{\Hypertarget{classcapture__camera_af9bbc46c263040e51d130ed6710975df}\label{classcapture__camera_af9bbc46c263040e51d130ed6710975df}} 
+void {\bfseries disable\+Size\+Properties} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_a93dac0eb61e7b728abe9a30651d880bd}\label{classcapture__camera_a93dac0eb61e7b728abe9a30651d880bd}} 
+void {\bfseries set\+F\+P\+S\+Properties} (int)
+\item 
+\mbox{\Hypertarget{classcapture__camera_a032bef7d391b22058b88b9638f56ee16}\label{classcapture__camera_a032bef7d391b22058b88b9638f56ee16}} 
+void {\bfseries disable\+F\+P\+S\+Properties} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_ae5e6cc89e00e0149125e7d97b11433bf}\label{classcapture__camera_ae5e6cc89e00e0149125e7d97b11433bf}} 
+void {\bfseries disable\+Camera\+Auto\+Exposure} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_aed9bbe364c00d4ba6f2ab435baa21c0c}\label{classcapture__camera_aed9bbe364c00d4ba6f2ab435baa21c0c}} 
+void {\bfseries store\+Frame\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_a138168ea2f09cd1f0753b507f4348018}\label{classcapture__camera_a138168ea2f09cd1f0753b507f4348018}} 
+std\+::vector$<$ cv\+::\+Mat $>$ {\bfseries get\+Frame\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_ae4b6748aac8dc43ac19c5f2cd3caad85}\label{classcapture__camera_ae4b6748aac8dc43ac19c5f2cd3caad85}} 
+void {\bfseries clear\+Frame\+Buffer} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_a5bb4e8ef9efc183833cd7b13cb0f6340}\label{classcapture__camera_a5bb4e8ef9efc183833cd7b13cb0f6340}} 
+int {\bfseries get\+Frame\+Buffer\+Size} ()
+\item 
+\mbox{\Hypertarget{classcapture__camera_aa133becc1d35821c17157b164ec6942d}\label{classcapture__camera_aa133becc1d35821c17157b164ec6942d}} 
+void {\bfseries enable\+F\+P\+S\+Properties} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcapture__camera_a1ae6f9e1a58683cbb3a4ffec89456cda}\label{classcapture__camera_a1ae6f9e1a58683cbb3a4ffec89456cda}} 
+Mat {\bfseries gframe}
+\item 
+\mbox{\Hypertarget{classcapture__camera_a3c117ceb7309589f542aa5da15bba81c}\label{classcapture__camera_a3c117ceb7309589f542aa5da15bba81c}} 
+std\+::vector$<$ cv\+::\+Mat $>$ {\bfseries gframe\+Buffer}
+\item 
+\mbox{\Hypertarget{classcapture__camera_a13c4cdc768b826309c00255ecd612add}\label{classcapture__camera_a13c4cdc768b826309c00255ecd612add}} 
+\mbox{\hyperlink{structframe_size}{frame\+Size}} {\bfseries gframe\+Size}
+\item 
+\mbox{\Hypertarget{classcapture__camera_a0765b6a387045c1555362e91a385bc4f}\label{classcapture__camera_a0765b6a387045c1555362e91a385bc4f}} 
+int {\bfseries g\+F\+PS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{classcapture__camera}{capture\+\_\+camera}} class is for handler class for opencv camera capture. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcapture__camera_a4c624aa08561057ba402c8728f7693c5}\label{classcapture__camera_a4c624aa08561057ba402c8728f7693c5}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!flip\+Frame@{flip\+Frame}}
+\index{flip\+Frame@{flip\+Frame}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{flip\+Frame()}{flipFrame()}}
+{\footnotesize\ttfamily void capture\+\_\+camera\+::flip\+Frame (\begin{DoxyParamCaption}\item[{Mat}]{mat\+In,  }\item[{Mat}]{mat\+Out }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_a4c624aa08561057ba402c8728f7693c5}{capture\+\_\+camera\+::flip\+Frame}} flip an image from camera capture function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat\+In} & Mat input of image \\
+\hline
+{\em mat\+Out} & Mat output of image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcapture__camera_ac0efa824fd11a5e77ff11114c5e6d0bc}\label{classcapture__camera_ac0efa824fd11a5e77ff11114c5e6d0bc}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!getframe@{getframe}}
+\index{getframe@{getframe}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{getframe()}{getframe()}}
+{\footnotesize\ttfamily Mat capture\+\_\+camera\+::getframe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_ac0efa824fd11a5e77ff11114c5e6d0bc}{capture\+\_\+camera\+::getframe}} Get raw mat from camera capture function 
+
+\begin{DoxyReturn}{Returns}
+Raw matrices of the captured image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcapture__camera_a65e6760360f14c149612f2280aed23dc}\label{classcapture__camera_a65e6760360f14c149612f2280aed23dc}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!get\+R\+G\+Bframe@{get\+R\+G\+Bframe}}
+\index{get\+R\+G\+Bframe@{get\+R\+G\+Bframe}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{get\+R\+G\+Bframe()}{getRGBframe()}}
+{\footnotesize\ttfamily Mat capture\+\_\+camera\+::get\+R\+G\+Bframe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_a65e6760360f14c149612f2280aed23dc}{capture\+\_\+camera\+::get\+R\+G\+Bframe}} Get R\+GB Matrices from camera capture function 
+
+\begin{DoxyReturn}{Returns}
+R\+GB matrices of the captured image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcapture__camera_a1a47efefa0b820beacee88b5332dc01f}\label{classcapture__camera_a1a47efefa0b820beacee88b5332dc01f}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!start\+\_\+camera@{start\+\_\+camera}}
+\index{start\+\_\+camera@{start\+\_\+camera}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{start\+\_\+camera()}{start\_camera()}}
+{\footnotesize\ttfamily void capture\+\_\+camera\+::start\+\_\+camera (\begin{DoxyParamCaption}\item[{int}]{cam }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_a1a47efefa0b820beacee88b5332dc01f}{capture\+\_\+camera\+::start\+\_\+camera}} start camera capture using open\+CV library 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & number of connect camera port \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcapture__camera_a73588d980bf53b1372b3f2b36363e726}\label{classcapture__camera_a73588d980bf53b1372b3f2b36363e726}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!start\+\_\+camera\+\_\+v4l2@{start\+\_\+camera\+\_\+v4l2}}
+\index{start\+\_\+camera\+\_\+v4l2@{start\+\_\+camera\+\_\+v4l2}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{start\+\_\+camera\+\_\+v4l2()}{start\_camera\_v4l2()}}
+{\footnotesize\ttfamily void capture\+\_\+camera\+::start\+\_\+camera\+\_\+v4l2 (\begin{DoxyParamCaption}\item[{int}]{cam }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_a73588d980bf53b1372b3f2b36363e726}{capture\+\_\+camera\+::start\+\_\+camera\+\_\+v4l2}} start camera capture using v4l2 library -\/ applicable to linux only 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cam} & number of connect camera port \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcapture__camera_acba0e792dbd2136b7a6273e1fe0f05a4}\label{classcapture__camera_acba0e792dbd2136b7a6273e1fe0f05a4}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!successful@{successful}}
+\index{successful@{successful}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{successful()}{successful()}}
+{\footnotesize\ttfamily bool capture\+\_\+camera\+::successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_acba0e792dbd2136b7a6273e1fe0f05a4}{capture\+\_\+camera\+::successful}} 
+
+\begin{DoxyReturn}{Returns}
+capture successful -\/ True/\+False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcapture__camera_a07d88d50c866430da2dd5cf4362c2a67}\label{classcapture__camera_a07d88d50c866430da2dd5cf4362c2a67}} 
+\index{capture\+\_\+camera@{capture\+\_\+camera}!update\+\_\+frame@{update\+\_\+frame}}
+\index{update\+\_\+frame@{update\+\_\+frame}!capture\+\_\+camera@{capture\+\_\+camera}}
+\subsubsection{\texorpdfstring{update\+\_\+frame()}{update\_frame()}}
+{\footnotesize\ttfamily void capture\+\_\+camera\+::update\+\_\+frame (\begin{DoxyParamCaption}\item[{Mat}]{frame }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classcapture__camera_a07d88d50c866430da2dd5cf4362c2a67}{capture\+\_\+camera\+::update\+\_\+frame}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+capture\+\_\+camera.\+h\item 
+capture\+\_\+camera.\+cpp\end{DoxyCompactItemize}

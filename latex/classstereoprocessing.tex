@@ -1,0 +1,92 @@
+\hypertarget{classstereoprocessing}{}\section{stereoprocessing Class Reference}
+\label{classstereoprocessing}\index{stereoprocessing@{stereoprocessing}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classstereoprocessing_a6d404af62436da57c6e8e8574e203ab8}{stereo\+BM}} (cv\+::\+Mat, cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_ae7efe9e4a9eef1ae6b233682585865df}\label{classstereoprocessing_ae7efe9e4a9eef1ae6b233682585865df}} 
+void {\bfseries start\+Stereo\+BM} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_ad4820d43566313e47e0f04f24ed27739}\label{classstereoprocessing_ad4820d43566313e47e0f04f24ed27739}} 
+void {\bfseries run\+Stereo\+BM} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_ab4f330da0d912ce59cd2e77d819dd0df}\label{classstereoprocessing_ab4f330da0d912ce59cd2e77d819dd0df}} 
+cv\+::\+Mat {\bfseries crude\+Mat\+Merge} (cv\+::\+Mat, cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_af5e7b643b3f454b521db7cd07390e9da}\label{classstereoprocessing_af5e7b643b3f454b521db7cd07390e9da}} 
+cv\+::\+Mat {\bfseries stitching\+Mat\+Merge} (cv\+::\+Mat, cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a05d38535514bc92549d9df7b1b3609d8}\label{classstereoprocessing_a05d38535514bc92549d9df7b1b3609d8}} 
+void {\bfseries apply\+Stereo\+Calibration\+Parameter} (\mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} S\+C\+Param, \mbox{\hyperlink{structstereo_rectify_param}{stereo\+Rectify\+Param}} S\+R\+Param)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_aa249dc8cc98c932cb7ed7fbabdfd25ee}\label{classstereoprocessing_aa249dc8cc98c932cb7ed7fbabdfd25ee}} 
+void {\bfseries set\+S\+C\+Param} (\mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} S\+C\+Param)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a21db44b08d4051536dca739f1c71eb43}\label{classstereoprocessing_a21db44b08d4051536dca739f1c71eb43}} 
+\mbox{\hyperlink{structstereo_calibrate_param}{stereo\+Calibrate\+Param}} {\bfseries get\+S\+C\+Param} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_acc0013473597b6371d9df4f214748341}\label{classstereoprocessing_acc0013473597b6371d9df4f214748341}} 
+void {\bfseries set\+Intrinsics\+Param} (\mbox{\hyperlink{structintrinsic_param}{intrinsic\+Param}} intrin\+Param)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a6ded43880106e321886d216eb4101b17}\label{classstereoprocessing_a6ded43880106e321886d216eb4101b17}} 
+\mbox{\hyperlink{structintrinsic_param}{intrinsic\+Param}} {\bfseries get\+Intrinsics\+Param} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_af8875d3aa72f0e35192605f616a9d25d}\label{classstereoprocessing_af8875d3aa72f0e35192605f616a9d25d}} 
+void {\bfseries set\+Extrinsics\+Param} (\mbox{\hyperlink{structextrinsic_param}{extrinsic\+Param}} extrin\+Param)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_ab004a794a78bd53248b03592a3d639c6}\label{classstereoprocessing_ab004a794a78bd53248b03592a3d639c6}} 
+\mbox{\hyperlink{structextrinsic_param}{extrinsic\+Param}} {\bfseries get\+Extrinsics\+Param} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_ab958aaa8f6659c9b95e836d4797ff5b0}\label{classstereoprocessing_ab958aaa8f6659c9b95e836d4797ff5b0}} 
+void {\bfseries set\+Image\+Size} (int h, int w)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a9e94881d8ba35e261bef6a55c92aac91}\label{classstereoprocessing_a9e94881d8ba35e261bef6a55c92aac91}} 
+void {\bfseries set\+Image\+Size} (cv\+::\+Size image\+Size)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a326694848de465a3a82e99e195505e31}\label{classstereoprocessing_a326694848de465a3a82e99e195505e31}} 
+cv\+::\+Size {\bfseries get\+Image\+Size} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a98bebd22cbe12067f57cf8710a6c5da6}\label{classstereoprocessing_a98bebd22cbe12067f57cf8710a6c5da6}} 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Mat $>$ $>$ {\bfseries init\+Stereo\+U\+R\+Mfrom\+Calib\+Param} (\mbox{\hyperlink{structintrinsic_param}{intrinsic\+Param}}, \mbox{\hyperlink{structextrinsic_param}{extrinsic\+Param}})
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a00688f7a01f09ea90b09919211f27a58}\label{classstereoprocessing_a00688f7a01f09ea90b09919211f27a58}} 
+void {\bfseries init\+Stereo\+U\+R\+Mfrom\+Calib\+Param} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a38583a7eacc99c4dc63aaa48247664c8}\label{classstereoprocessing_a38583a7eacc99c4dc63aaa48247664c8}} 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Mat $>$ $>$ {\bfseries init\+Stereo\+R\+Map\+Setup} ()
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a6900c89409d40826f6b691a91a8e7f7d}\label{classstereoprocessing_a6900c89409d40826f6b691a91a8e7f7d}} 
+\mbox{\hyperlink{structremapped_stereo}{remapped\+Stereo}} {\bfseries stereo\+Remap} (cv\+::\+Mat \&, cv\+::\+Mat \&)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a1c2725216cf6daabd5b122878a638905}\label{classstereoprocessing_a1c2725216cf6daabd5b122878a638905}} 
+cv\+::\+Mat {\bfseries stereo\+Remap\+Display} (cv\+::\+Mat, cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a3887d170f7bf6c9436e5964594c1d6d2}\label{classstereoprocessing_a3887d170f7bf6c9436e5964594c1d6d2}} 
+cv\+::\+Mat {\bfseries stereo\+B\+M\+Calibrated} (cv\+::\+Mat, cv\+::\+Mat)
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a237e533db3be8c97714a8a00a7f65d7b}\label{classstereoprocessing_a237e533db3be8c97714a8a00a7f65d7b}} 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Mat $>$ $>$ {\bfseries init\+R\+Map\+Vctor} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstereoprocessing_a221e8e94b910de024484e554cce0f975}\label{classstereoprocessing_a221e8e94b910de024484e554cce0f975}} 
+\mbox{\hyperlink{classlogmessagehandler}{logmessagehandler}} $\ast$ {\bfseries logmessage} = new \mbox{\hyperlink{classlogmessagehandler}{logmessagehandler}}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstereoprocessing_a6d404af62436da57c6e8e8574e203ab8}\label{classstereoprocessing_a6d404af62436da57c6e8e8574e203ab8}} 
+\index{stereoprocessing@{stereoprocessing}!stereo\+BM@{stereo\+BM}}
+\index{stereo\+BM@{stereo\+BM}!stereoprocessing@{stereoprocessing}}
+\subsubsection{\texorpdfstring{stereo\+B\+M()}{stereoBM()}}
+{\footnotesize\ttfamily cv\+::\+Mat stereoprocessing\+::stereo\+BM (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{mat\+Left,  }\item[{cv\+::\+Mat}]{mat\+Right }\end{DoxyParamCaption})}
+
+$<$ Range of disparity ~\newline
+ $<$ Size of the block window. Must be odd 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+stereoprocessing.\+h\item 
+stereoprocessing.\+cpp\end{DoxyCompactItemize}

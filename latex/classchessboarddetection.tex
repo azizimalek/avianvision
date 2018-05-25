@@ -1,0 +1,65 @@
+\hypertarget{classchessboarddetection}{}\section{chessboarddetection Class Reference}
+\label{classchessboarddetection}\index{chessboarddetection@{chessboarddetection}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a97a4a30faf0bc990686236cd20d060f7}\label{classchessboarddetection_a97a4a30faf0bc990686236cd20d060f7}} 
+cv\+::\+Mat {\bfseries draw\+Chess\+Corners} (cv\+::\+Mat, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_abc71ee623021de8ec3e937ceba2decf6}\label{classchessboarddetection_abc71ee623021de8ec3e937ceba2decf6}} 
+bool {\bfseries find\+Chess\+Corners} (cv\+::\+Mat, cv\+::\+Size \&, std\+::vector$<$ cv\+::\+Point2f $>$ \&, const int)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_ac99285780391f2803536cb1177a6b951}\label{classchessboarddetection_ac99285780391f2803536cb1177a6b951}} 
+bool {\bfseries extract\+Chess\+Points} (cv\+::\+Mat, std\+::vector$<$ cv\+::\+Point2f $>$ \&, cv\+::\+Size)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a5c646bf4acc8967358448aac7cfe5f16}\label{classchessboarddetection_a5c646bf4acc8967358448aac7cfe5f16}} 
+void {\bfseries init\+Chessboard\+Points} (std\+::vector$<$ std\+::vector$<$ cv\+::\+Point3f $>$$>$ \&, int, cv\+::\+Size, float)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a0c48bc927ef7caec1e049fca3a1ecbf3}\label{classchessboarddetection_a0c48bc927ef7caec1e049fca3a1ecbf3}} 
+void {\bfseries update\+Chessboard\+Input} (cv\+::\+Mat in\+Mat)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a26c7ffac178495467c64eee54e82ae7b}\label{classchessboarddetection_a26c7ffac178495467c64eee54e82ae7b}} 
+void {\bfseries update\+Chessboard\+Frame} (cv\+::\+Mat \&chess\+Mat)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_afd6c4ed618830c083227edeb0625cc68}\label{classchessboarddetection_afd6c4ed618830c083227edeb0625cc68}} 
+void {\bfseries start\+Draw\+Chess\+Corners} ()
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a9f423d0e1c17a6001eab3aac65db7b13}\label{classchessboarddetection_a9f423d0e1c17a6001eab3aac65db7b13}} 
+void {\bfseries stop\+Draw\+Chess\+Corners} ()
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a8436d83f593108d4c1cc3736cc19a177}\label{classchessboarddetection_a8436d83f593108d4c1cc3736cc19a177}} 
+void {\bfseries draw\+Chess\+Corners\+\_\+independent} ()
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a862af7eb880eb658938b5eec4506b2d8}\label{classchessboarddetection_a862af7eb880eb658938b5eec4506b2d8}} 
+void {\bfseries setboardsize} (int x, int y)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a0607ed8e7db9f8e6174865188a020f9c}\label{classchessboarddetection_a0607ed8e7db9f8e6174865188a020f9c}} 
+void {\bfseries enable\+Thread} ()
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a8bc8111ee35faa0b19502a296b57280f}\label{classchessboarddetection_a8bc8111ee35faa0b19502a296b57280f}} 
+void {\bfseries disable\+Thread} ()
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a81a068aebb5166da8bad30541f797b49}\label{classchessboarddetection_a81a068aebb5166da8bad30541f797b49}} 
+bool {\bfseries verify\+Pair\+Chess\+Board} (std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a65ed77b3e54ad3c9125237e61762932d}\label{classchessboarddetection_a65ed77b3e54ad3c9125237e61762932d}} 
+bool {\bfseries verify\+Pair\+And\+Save\+Chess\+Board} (std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_ade3f609aa01cb096f36bed30c05ef3b2}\label{classchessboarddetection_ade3f609aa01cb096f36bed30c05ef3b2}} 
+void {\bfseries delete\+Current\+Pair\+Mat\+Buffer} (std\+::vector$<$ cv\+::\+Mat $>$ \&, std\+::vector$<$ cv\+::\+Mat $>$ \&)
+\item 
+\mbox{\Hypertarget{classchessboarddetection_a946295f01845604b7684b17d1e111150}\label{classchessboarddetection_a946295f01845604b7684b17d1e111150}} 
+std\+::vector$<$ cv\+::\+Point3f $>$ {\bfseries calculate\+Actual\+Chessboard\+Size} (cv\+::\+Size, float)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classchessboarddetection_abb571fbaa41400cc2ad06be70300f98c}\label{classchessboarddetection_abb571fbaa41400cc2ad06be70300f98c}} 
+cv\+::\+Mat {\bfseries gframe\+With\+Chess}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+chessboarddetection.\+h\item 
+chessboarddetection.\+cpp\end{DoxyCompactItemize}

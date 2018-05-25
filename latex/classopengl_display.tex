@@ -1,0 +1,75 @@
+\hypertarget{classopengl_display}{}\section{opengl\+Display Class Reference}
+\label{classopengl_display}\index{opengl\+Display@{opengl\+Display}}
+Inheritance diagram for opengl\+Display\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classopengl_display}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classopengl_display_a27a0628008cf743b5fa003a3b1c56a86}\label{classopengl_display_a27a0628008cf743b5fa003a3b1c56a86}} 
+{\bfseries opengl\+Display} (Q\+Widget $\ast$parent)
+\item 
+\mbox{\Hypertarget{classopengl_display_a52e8e9c3e3ce23ac0f434bb9d6d58630}\label{classopengl_display_a52e8e9c3e3ce23ac0f434bb9d6d58630}} 
+void {\bfseries set\+Display\+Texture} (cv\+::\+Mat \&)
+\item 
+\mbox{\Hypertarget{classopengl_display_a00335d58fa4469ff22d5b1159b0c1e5a}\label{classopengl_display_a00335d58fa4469ff22d5b1159b0c1e5a}} 
+G\+Luint {\bfseries mat\+To\+Texture} (cv\+::\+Mat, G\+Lenum, G\+Lenum, G\+Lenum)
+\item 
+void \mbox{\hyperlink{classopengl_display_a2227c65237769f48f1d722e65fd389bd}{make\+Object}} ()
+\item 
+void \mbox{\hyperlink{classopengl_display_ab03aeea355ba1de55ce03381ef1c2d62}{make\+Gui}} ()
+\item 
+\mbox{\Hypertarget{classopengl_display_a0003c771d33b6f4188acdefa9c49eb67}\label{classopengl_display_a0003c771d33b6f4188acdefa9c49eb67}} 
+Q\+Image {\bfseries mat\+\_\+to\+\_\+qimage} (cv\+::\+Mat \&, Q\+Image\+::\+Format)
+\item 
+\mbox{\Hypertarget{classopengl_display_ae68fcd050ff90d6b140564bdef3a9b23}\label{classopengl_display_ae68fcd050ff90d6b140564bdef3a9b23}} 
+Q\+Image {\bfseries Mat2\+Q\+Image} (const cv\+::\+Mat\+\_\+$<$ double $>$ \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classopengl_display_a348f99a1154f59dbc91d652ec4aaa4b8}\label{classopengl_display_a348f99a1154f59dbc91d652ec4aaa4b8}} 
+void {\bfseries initialize\+GL} ()
+\item 
+\mbox{\Hypertarget{classopengl_display_a884e87f0e5459bb1cf203fff034de679}\label{classopengl_display_a884e87f0e5459bb1cf203fff034de679}} 
+void {\bfseries resize\+GL} (int w, int h)
+\item 
+\mbox{\Hypertarget{classopengl_display_a459f873c97a2f7da81a1ec5cc3068f80}\label{classopengl_display_a459f873c97a2f7da81a1ec5cc3068f80}} 
+void {\bfseries paint\+GL} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classopengl_display_ab03aeea355ba1de55ce03381ef1c2d62}\label{classopengl_display_ab03aeea355ba1de55ce03381ef1c2d62}} 
+\index{opengl\+Display@{opengl\+Display}!make\+Gui@{make\+Gui}}
+\index{make\+Gui@{make\+Gui}!opengl\+Display@{opengl\+Display}}
+\subsubsection{\texorpdfstring{make\+Gui()}{makeGui()}}
+{\footnotesize\ttfamily void opengl\+Display\+::make\+Gui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+drawing box frame and placing the texture coordinate in vertex points vertices data structure vectices in 3D space
+\begin{DoxyEnumerate}
+\item x vertex point
+\item y vertex point
+\item z vertex point Texture points in 2D
+\item x texture point \subsubsection*{5. y texture point }
+\end{DoxyEnumerate}\mbox{\Hypertarget{classopengl_display_a2227c65237769f48f1d722e65fd389bd}\label{classopengl_display_a2227c65237769f48f1d722e65fd389bd}} 
+\index{opengl\+Display@{opengl\+Display}!make\+Object@{make\+Object}}
+\index{make\+Object@{make\+Object}!opengl\+Display@{opengl\+Display}}
+\subsubsection{\texorpdfstring{make\+Object()}{makeObject()}}
+{\footnotesize\ttfamily void opengl\+Display\+::make\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+drawing box frame and placing the texture coordinate in vertex points vertices data structure vectices in 3D space
+\begin{DoxyEnumerate}
+\item x vertex point
+\item y vertex point
+\item z vertex point Texture points in 2D
+\item x texture point \subsubsection*{5. y texture point }
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+opengldisplay.\+h\item 
+opengldisplay.\+cpp\end{DoxyCompactItemize}
