@@ -36,16 +36,21 @@ void MainWindow::on_leftcamera_bt_clicked()
         v4l2.setCameraPowerLineControl(ui->leftcam_cb->currentIndex());
         leftcam.start_camera(ui->leftcam_cb->currentIndex());
         //leftcam.start_camera_v4l2(ui->leftcam_cb->currentIndex());
+        opticalproc.startOpticalFlowPyrLKPano();
     }
 
     else {
         ui->status_te->append("stopping left camera");
+        //TEMP: quick test for optical flow
+        opticalproc.stopOpticalFlowPyrLK();
         leftcam.stop_camera();
     }
     //if(leftcam.successful())
 
     leftcam.enableFlip();
     leftcambutton->togglebutton();
+
+
 
 }
 
@@ -128,12 +133,18 @@ void MainWindow::on_stereodepth_rb_clicked()
 
 Mat MainWindow::displayGLSelected(){
     cv::Mat glframe;
+    cv:Mat panaFrame;
     chessboard[0].updateChessboardInput(leftcam.getRGBframe());
     chessboard[1].updateChessboardInput(rightcam.getRGBframe());
     switch(displaySelector){
     case DISPLAYSELECT::LEFTCAM:
         display->setRefreshTime(10);
-        glframe = leftcam.getRGBframe();
+        //glframe = leftcam.getRGBframe();
+        panaFrame = panaproc.unwarpPanoramic(leftcam.getRGBframe());
+        //glframe = opticalproc.drawingOpticalFlowNative(panaFrame);
+        opticalproc.bindFrame(panaFrame);
+        glframe = opticalproc.getDisplayFrame();
+        //glframe = panaproc.drawReferenceLine(leftcam.getRGBframe());
         break;
     case DISPLAYSELECT::RIGHTCAM:
         display->setRefreshTime(10);
@@ -158,11 +169,11 @@ Mat MainWindow::displayGLSelected(){
         glframe = stereoproc.crudeMatMerge(leftMat,rightMat);
     }
         break;
-    case 6:
+    case STEREOBMMAP:
         glframe = stereoproc.stereoBM(leftcam.getframe(),rightcam.getframe());
         if(glframe.empty())ui->status_te->append("where's my frame...");
         break;
-    case 7:
+    case CALIBRATEDSTEREOMAP: //calibrated stereo map
         //TODO: remapped stereo images
         //glframe = stereoproc.stereoRemapDisplay(leftcam.getRGBframe(),rightcam.getRGBframe());
        // glframe = stereoproc.stereoBMCalibrated(leftcam.getRGBframe(),rightcam.getRGBframe());
@@ -176,6 +187,46 @@ Mat MainWindow::displayGLSelected(){
 
     };
     if(glframe.empty()) ui->status_te->append("no frame found");
+
+    //temperatory looper (must delete when proper has been done
+
+    std::string recordedData = "";
+    if(!opticalproc.getPixelVelocityData().empty() && writingfile && opticalproc.getPixelVelocityData().size() == 4){
+        recordedData = std::to_string((std::clock() - start_time)/(double)CLOCKS_PER_SEC);
+        recordedData += "\t";
+        for (int i=0; i < opticalproc.getPixelVelocityData().size(); i++){
+            recordedData += std::to_string(opticalproc.getPixelVelocityData()[i].x);
+            recordedData += "\t";
+            recordedData += std::to_string(opticalproc.getPixelVelocityData()[i].y);
+            recordedData += "\t";
+        }
+
+        Point3fn rbloc;
+        Quaternion4f rbquat;
+        if(natnet.running()){
+            logmessage->status("Recording optitrack data");
+            rbloc = natnet.getRigidBodyLocation();
+            rbquat = natnet.getRigidBodyOrientation();
+
+            recordedData += std::to_string(natnet.getRigidBodyLocation().x);
+            recordedData += "\t";
+            recordedData += std::to_string(natnet.getRigidBodyLocation().y);
+            recordedData += "\t";
+            recordedData += std::to_string(natnet.getRigidBodyLocation().z);
+            recordedData += "\t";
+
+            recordedData += std::to_string(natnet.getRigidBodyOrientation().qw);
+            recordedData += "\t";
+            recordedData += std::to_string(natnet.getRigidBodyOrientation().qx);
+            recordedData += "\t";
+            recordedData += std::to_string(natnet.getRigidBodyOrientation().qy);
+            recordedData += "\t";
+            recordedData += std::to_string(natnet.getRigidBodyOrientation().qz);
+            recordedData += "\t";
+        }
+
+        outfile << recordedData << std::endl;
+    }
 
     return glframe;
 }
@@ -236,7 +287,7 @@ void MainWindow::on_withchess_rb_toggled(bool checked)
 
 void MainWindow::on_stereobm_rb_toggled(bool checked)
 {
-    if(checked) displaySelector = 6;
+    if(checked) displaySelector = STEREOBMMAP;
     else{}
 }
 
@@ -246,14 +297,19 @@ void MainWindow::on_applycalibration_bt_clicked()
     stereoproc.setIntrinsicsParam(stereocam.readSCIntrinsicParams());
     stereoproc.setExtrinsicsParam(stereocam.readSCExtrinsicParams());
     //stereoproc.setImageSize(stereocam);
-    stereoproc.initStereoURMfromCalibParam();
-    logmessage->status("Stereo Calibration Intrinsic Parameters Applied.");
+    if(stereoproc.calibrationReady()){
+        stereoproc.initStereoURMfromCalibParam();
+        logmessage->status("Stereo Calibration Intrinsic Parameters Applied.");
+    }
+    else {
+        logmessage->status("Stereo Calibration Failed. Please check calibration file.");
+    }
 
 }
 
 void MainWindow::on_stereowcalib_rb_toggled(bool checked)
 {
-    if(checked) displaySelector = 7;
+    if(checked) displaySelector = CALIBRATEDSTEREOMAP;
     else{}
 }
 
@@ -265,8 +321,47 @@ void MainWindow::on_run_bt_clicked()
     on_leftcamera_bt_clicked();
     on_rightcamera_bt_clicked();
     on_applycalibration_bt_clicked();
+    if(stereoproc.calibrationReady())
     on_stereowcalib_rb_toggled(true);
 }
 
 
+void MainWindow::on_recorddata_pb_clicked()
+{
 
+    if(!writingfile){
+        start_time = std::clock();
+        std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+
+        time_t tt;
+
+        tt = std::chrono::system_clock::to_time_t ( today );
+        String datetime = ctime(&tt);
+
+        String filename = "data" + datetime;
+
+        outfile.open(filename + ".txt");
+        //outfile <<
+        writingfile = true;
+
+        logmessage->status("Recording data to file.");
+    }
+
+    else{
+
+    }
+}
+
+void MainWindow::on_recorddata_pb_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_optitrack_pb_clicked()
+{
+    try{
+        natnet.runNatnetStream("192.168.1.104","192.168.1.100");
+    }
+    catch(std::exception ex){logmessage->error(ex.what());}
+
+}

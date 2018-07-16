@@ -10,13 +10,13 @@
 #include "chessboarddetection.h"
 #include "stereocalibration.h"
 #include "opticalflow.h"
+#include "panaromicprocessing.h"
+#include "natnethandler.h"
 #include <GL/gl.h>
 #include <GL/glu.h>
 
 using namespace cv;
 using namespace std;
-
-
 
 namespace Ui {
 class MainWindow;
@@ -73,6 +73,12 @@ private slots:
 
     void on_run_bt_clicked();
 
+    void on_recorddata_pb_clicked();
+
+    void on_recorddata_pb_toggled(bool checked);
+
+    void on_optitrack_pb_clicked();
+
 private:
     Ui::MainWindow *ui;
     //Model section
@@ -88,6 +94,10 @@ private:
     stereoprocessing stereoproc;
     //optical flow handler
     opticalflow opticalproc;
+    //panaromic processing handler
+    panaromicprocessing panaproc;
+    //Optitrack NatNet Handler
+    natnethandler natnet;
 
     //Controller section
     logmessagehandler *logmessage = new logmessagehandler();
@@ -97,6 +107,11 @@ private:
     uidisplaycontroller *display = new uidisplaycontroller();
 
     int displaySelector = 0;
+
+    bool writingfile = false;
+    ofstream outfile;
+    std::clock_t start_time;
+
     //QThread display;
 };
 

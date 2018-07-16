@@ -15,10 +15,18 @@ struct stereoCalibrateParam{
 
 struct intrinsicParam{
     cv::Mat M1, M2, D1, D2;
+    bool ready(){
+        if(!M1.empty() || !M2.empty() || !D1.empty() || !D2.empty()) return true;
+        else false;
+    }
 };
 
 struct extrinsicParam{
     cv::Mat R,T,R1,R2,P1,P2,Q;
+    bool ready(){
+        if(!R.empty() || !T.empty() || !R1.empty() || !R2.empty() || !P1.empty() || !P2.empty() || !Q.empty()) return true;
+        else false;
+    }
 };
 
 class stereocalibration

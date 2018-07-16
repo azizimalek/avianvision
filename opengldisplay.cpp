@@ -61,16 +61,12 @@ void openglDisplay::initializeGL()
 
 void openglDisplay::paintGL()
 {
-    //glClearColor(clearColor.redF(), clearColor.greenF(), clearColor.blueF(), clearColor.alphaF());
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //control orientation
     QMatrix4x4 m;
     m.ortho(-1.0f, +1.0f, +1.0f, -1.0f, 4.0f, 15.0f);
     m.translate(0.0f, 0.0f, -10.0f);
-//    m.rotate(xRot / 16.0f, 1.0f, 0.0f, 0.0f);
-//    m.rotate(yRot / 16.0f, 0.0f, 1.0f, 0.0f);
-//    m.rotate(zRot / 16.0f, 0.0f, 0.0f, 1.0f);
 
     program->setUniformValue("matrix", m);
     program->enableAttributeArray(PROGRAM_VERTEX_ATTRIBUTE);
@@ -78,9 +74,8 @@ void openglDisplay::paintGL()
     program->setAttributeBuffer(PROGRAM_VERTEX_ATTRIBUTE, GL_FLOAT, 0, 3, 5 * sizeof(GLfloat));
     program->setAttributeBuffer(PROGRAM_TEXCOORD_ATTRIBUTE, GL_FLOAT, 3 * sizeof(GLfloat), 2, 5 * sizeof(GLfloat));
 
-    //texture = new QOpenGLTexture(QImage(QString(":/images/side2.png").arg(1)).mirrored());
-        texture->bind();
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    texture->bind();
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 }
 
 void openglDisplay::resizeGL(int width, int height)
@@ -138,15 +133,6 @@ GLuint openglDisplay::matToTexture(cv::Mat mat, GLenum minFilter, GLenum magFilt
                  GL_UNSIGNED_BYTE,  // Image data type
                  mat.ptr());        // The actual image data itself
 
-//    // If we're using mipmaps then generate them. Note: This requires OpenGL 3.0 or higher
-//    if (minFilter == GL_LINEAR_MIPMAP_LINEAR  ||
-//        minFilter == GL_LINEAR_MIPMAP_NEAREST ||
-//        minFilter == GL_NEAREST_MIPMAP_LINEAR ||
-//        minFilter == GL_NEAREST_MIPMAP_NEAREST)
-//    {
-//        glGenerateMipmap(GL_TEXTURE_2D);
-//    }
-
     return textureID;
 }
 
@@ -191,7 +177,6 @@ void openglDisplay::setDisplayTexture(cv::Mat &frame){
         update();
         texture->release();
     }
-
 }
 
 void openglDisplay::makeObject()

@@ -15,6 +15,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 #include <iterator>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,12 +27,17 @@
 #include <iostream>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
+#include <cmath>
+
+//for natnet
+
 
 #include <QString>
 
 #include "logmessagehandler.h"
 
 extern logMessageInterface logger;
+
 
 
 #endif // MASTERHEADER_H

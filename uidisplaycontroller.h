@@ -17,7 +17,9 @@ enum DISPLAYSELECT{
     STEREOMERGE,
     STEREOSTITCH,
     STEREOBM,
-    STEREOREMAP
+    STEREOREMAP,
+    STEREOBMMAP,
+    CALIBRATEDSTEREOMAP
 };
 
 class uidisplaycontroller : public QObject

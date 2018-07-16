@@ -28,10 +28,12 @@ public:
     intrinsicParam getIntrinsicsParam(){return mintrinParam;}
     void setExtrinsicsParam(extrinsicParam extrinParam){mextrinParam = extrinParam;}
     extrinsicParam getExtrinsicsParam(){return mextrinParam;}
+    bool calibrationReady(){if(mintrinParam.ready() && mextrinParam.ready()) return true; else return false;}
     void setImageSize(int h,int w){mimageSize.height = h; mimageSize.width = w;}
     void setImageSize(cv::Size imageSize){mimageSize = imageSize;}
     cv::Size getImageSize(){return mimageSize;}
-    std::vector<std::vector<cv::Mat>> initStereoURMfromCalibParam(intrinsicParam, extrinsicParam);
+    std::vector<std::vector
+    <cv::Mat>> initStereoURMfromCalibParam(intrinsicParam, extrinsicParam);
     void initStereoURMfromCalibParam();
     std::vector<std::vector<cv::Mat>> initStereoRMapSetup();
     remappedStereo stereoRemap(cv::Mat&,cv::Mat&);

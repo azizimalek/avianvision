@@ -4,9 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui opengl
+QT       += core gui opengl widgets
+QMAKE_CXXFLAGS += -std=c++11
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+#greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = avianvision
 TEMPLATE = app
@@ -35,7 +36,9 @@ SOURCES += \
     chessboarddetection.cpp \
     stereocalibration.cpp \
     v4l2capture.cpp \
-    opticalflow.cpp
+    opticalflow.cpp \
+    panaromicprocessing.cpp \
+    natnethandler.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,14 +52,19 @@ HEADERS += \
     masterheader.h \
     stereocalibration.h \
     v4l2capture.h \
-    opticalflow.h
+    opticalflow.h \
+    panaromicprocessing.h \
+    natnethandler.h
 
 FORMS += \
         mainwindow.ui
 
-INCLUDEPATH += /usr/local/lib
+INCLUDEPATH += /usr/local/lib \
+               /home/azinyer/Documents/NatNetLinux
 
-LIBS +=`pkg-config opencv --cflags --libs`
+LIBS +=`pkg-config opencv --cflags --libs`\
+        -lboost_system\
+        -lboost_thread
 
 RESOURCES += \
     texture.qrc
